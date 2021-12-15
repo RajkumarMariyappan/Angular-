@@ -1,0 +1,23 @@
+
+<h2>{{title}}</h2>
+<h2 [textContent]="title"></h2> 
+ <img src="{{imagess}}"/><br>
+ <img [src]="imagess"/>
+ <table>
+   <tr>
+     <td [attr.colspan]="colspan"></td>
+</tr>
+</table>
+<ul>
+<li *ngFor="let list of authors">
+  {{list}}
+</li><ul>
+<button class="btn" [class.btn-primary]="isactive">submit</button><br><br>
+<button [style.backgroundColor]="isactiv ?'green':'black'">demo button</button><br><br>
+<div (click)="divclick()">
+<button (click)="onclickbutton($event)">event</button></div>
+<input [(ngModel)]= "name"(keyup.enter) ="input()"/><br>
+{{hey.nme | uppercase |lowercase}}<br>
+{{hey.price | number :'1.2-2'}}<br>
+{{hey.int |number}}<br>
+{{hey.datere|date:'shortDate'}}

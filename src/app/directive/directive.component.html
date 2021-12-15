@@ -1,0 +1,47 @@
+<h2 style="text-align: center;">directive works!</h2>
+<h3>ngIF directive..</h3><br>
+<h3>First approach..</h3>
+<div *ngIf="subject.length>0">
+    <h4>Subject lists</h4>
+</div>
+<div *ngIf="subject.length==0">
+   <h4>No Subjects yet</h4>
+</div>
+<br><br>
+
+<h3>second approach..</h3>
+<div *ngIf= "subject.length>0; then sub else nosub"></div>
+    <ng-template #sub>
+    <h4>Subject lists</h4>
+</ng-template>
+
+<ng-template #nosub>
+    <h4>No Subjects yet</h4>
+</ng-template><br>
+
+<h3>Hidden property </h3><br>
+<div [hidden]="list.length== 0">
+   <h5>list of subject </h5>
+</div>
+<div [hidden]="list.length>0">
+    <h5>No list</h5>
+</div>
+
+<br>
+<h3>ngSwitch</h3><br>
+<button (click)="view ='map'">map</button>
+<button (click)="view ='list'">list</button>
+<div [ngSwitch]="view">
+    <div *ngSwitchCase="'list'"><h5>list</h5></div>
+    <div *ngSwitchCase="'map'"><h5>map</h5></div>
+    <div *ngSwitchDefault><h5>default</h5></div>
+</div><br>
+<h3>ngFor and it's local variable</h3>
+<div *ngFor= "let i of list ; index as k;odd as l;last as o">
+   <h5>{{k}}. {{i}} <span *ngIf= "l && o "> last</span></h5>
+</div><br>
+<h3>Array object</h3>
+<div *ngFor= "let j of listobj">
+    <h5> {{j.first}} {{j.last}} {{j.age}}</h5>
+
+ </div>
