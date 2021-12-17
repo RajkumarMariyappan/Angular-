@@ -1,0 +1,33 @@
+<p>template-forms works!</p>
+<form #f="ngForm" (ngSubmit)="submit(f)">
+    <h3 style="text-align: center;">login Form</h3>
+<div class="form-group">
+<label for="same">UserName</label>
+<input ngModel required name="UserName" type="text" class="form-control" id="same" #UserName="ngModel" (change)="log(UserName)" placeholder="userName">
+</div>
+<div class="form-group">
+ <label for="exampleInputPassword1">Password</label>
+    <input type="text" required  maxlength="10" class="form-control" id="exampleInputPassword1" ngModel name="password" (change)="log1(password)"  #password="ngModel" placeholder="Password">
+      <div *ngIf= "password.value.length<5 && password.touched">length of {{password.value.length}} is Weak password</div>
+</div>
+  <div>
+      <input type="checkbox" ngModel name="save"><label> Save the details</label>
+  </div>
+  <div>
+      <label for="drop">select the option</label>
+      <select id="drop"  ngModel name="dropname">
+          <option></option>
+          <option *ngFor="let a of dropobj" [value]="a.id">{{a.name}}</option>
+          
+      </select>
+  </div>
+
+      
+          <div *ngFor="let b of radobj">
+          <input id="rad" type="radio" [value]="b.id" ><label for="rad">{{b.name}}</label>
+        </div>
+     
+<p>{{f.value | json}}</p>
+  <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Submit</button>
+
+</form>

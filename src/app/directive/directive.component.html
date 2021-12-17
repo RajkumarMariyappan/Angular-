@@ -1,4 +1,6 @@
-<h2 style="text-align: center;">directive works!</h2>
+<div class="app">
+    
+    <h2 style="text-align: center;">directive works!</h2>
 <h3>ngIF directive..</h3><br>
 <h3>First approach..</h3>
 <div *ngIf="subject.length>0">
@@ -45,3 +47,13 @@
     <h5> {{j.first}} {{j.last}} {{j.age}}</h5>
 
  </div>
+
+ <h3>ngFor & change detection</h3>
+ <button (click)="Onadd()">addEvent</button>
+ <div *ngFor= " let log of login">
+     
+     <h5>{{log.lfirst}} <button (click)="Onremove(log)">remove</button></h5>
+ </div>
+
+ <input type="text" appInputCustomdirective>
+</div>

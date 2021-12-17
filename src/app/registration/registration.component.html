@@ -1,0 +1,46 @@
+<p>registration works!</p>
+<div class="formstyle">
+<form #f="ngForm" (ngSubmit)="submit(f)">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" 
+      required 
+      class="form-control"
+       id="exampleInputEmail1"
+         placeholder="Enter email"
+         ngModel
+         name="emailname"
+         #emailname="ngModel">
+      <label class="alert alert-warning" *ngIf= "!emailname.valid && emailname.touched">Email required !!</label>
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required
+      ngModel
+         name="passname"
+         #passname="ngModel"
+         minlength="10">
+         <label class="alert alert-warning" *ngIf= "passname.value.length <5 && passname.touched">Weak password !!</label>
+    </div>
+
+    <div class="form-group">
+       <div *ngFor= "let a of gen">
+        <label>
+        <input type="radio" ngModel name="rad" #rad="ngModel" id="example2"  [value]= "a.id">{{a.name}}</label>
+        </div>
+      </div>
+
+
+    <div class="form-group">
+    <label>Source..</label><br>
+    <select  id="exampleCheck1" ngModel name="drop" #drop="ngModel">
+        <option></option>
+    <option  *ngFor="let b of media" [value]="b.id">{{b.name}}</option>
+    </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <!-- <p>{{f.value | json}}</p> -->
+</div>

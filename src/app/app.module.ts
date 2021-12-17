@@ -8,6 +8,9 @@ import { AuthorComponent } from './author/author.component';
 import { EmailService } from './email.service';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { DirectiveComponent } from './directive/directive.component';
+import { InputCustomdirectiveDirective } from './input-customdirective.directive';
+import { TemplateFormsComponent } from './template-forms/template-forms.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +18,9 @@ import { DirectiveComponent } from './directive/directive.component';
     AuthorComponent,
     FavoriteComponent,
     DirectiveComponent,
+    InputCustomdirectiveDirective,
+    TemplateFormsComponent,
+    RegistrationComponent,
     
   ],
   imports: [

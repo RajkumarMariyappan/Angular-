@@ -26,6 +26,25 @@ listobj=[{
   age:25
 }]
 
+login=[{ lfirst:"raj",
+llast:"kumarr",
+lage:23
+},
+{ lfirst:"raju",
+llast:"kumarru",
+lage: 13
+}
+]
+
+Onadd(){
+  this.login.push({ lfirst:"raaj",llast:'kumaar',lage:23});
+}
+Onremove(log: { lfirst: string; llast: string; lage: number; }){
+  let ins = this.login.indexOf(log);
+  this.login.splice(ins,1);
+}
+
+
   constructor() { }
 
   ngOnInit(): void {
