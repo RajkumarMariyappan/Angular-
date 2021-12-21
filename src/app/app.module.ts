@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {  FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -11,6 +11,8 @@ import { DirectiveComponent } from './directive/directive.component';
 import { InputCustomdirectiveDirective } from './input-customdirective.directive';
 import { TemplateFormsComponent } from './template-forms/template-forms.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { ReactiveComponent } from './reactive/reactive.component';
+
 
 @NgModule({
   declarations: [
@@ -21,12 +23,15 @@ import { RegistrationComponent } from './registration/registration.component';
     InputCustomdirectiveDirective,
     TemplateFormsComponent,
     RegistrationComponent,
+    ReactiveComponent,
+    
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [EmailService],
   bootstrap: [AppComponent]

@@ -1,0 +1,38 @@
+<p>Reactive works</p>
+<form [formGroup]="form" (ngSubmit)="submiton()">
+  <!-- <div *ngIf= "form.errors" class="alert alert-danger">Username or password is invalid</div> -->
+    <div class="mb-3">
+      <label for="exampleInputEmail1" >Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" formControlName="use" ><br>
+      <span *ngIf= "usename?.pending" class="alert alert-danger">Checking for uniqueness</span>
+      <span  *ngIf= "usename && !usename.valid && usename.touched" class="alert alert-danger">
+      <span  *ngIf= "usename.errors?.['notsame']">username is already taken</span>
+      <span  *ngIf= "usename.errors?.['custom']">spaces not allowed</span>
+      <span  *ngIf= "usename.errors?.['required']">Email field is required</span>
+      </span>
+          </div>
+         
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1"  formControlName="pas"><br>
+      <span class="alert alert-danger" *ngIf= "passs && !passs.valid && passs.touched">
+        <span  *ngIf= "passs.errors?.['required']">Password is required</span>
+        <span  *ngIf= "passs.errors?.['minlength']">Weak password</span>
+        </span>
+      
+    </div>
+  
+    <div formArrayName="hobbies">
+    <label>Hobbies</label><br>
+    <button
+    class="btn btn-default"
+    type="button"
+    (click)="addhobbies()">Add Hobby</button>
+        <div *ngFor= "let hobbycontrol of getHobbies(); let i=index">
+      <input type="text" class="form-control" [formControlName]="i">
+    </div>
+  </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid" >Submit</button>
+   <p>{{form.value | json}}</p>
+ </form>
