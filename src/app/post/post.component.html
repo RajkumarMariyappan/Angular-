@@ -1,0 +1,19 @@
+<p>post works!</p>
+<label>title :</label>
+<input (keyup.enter)="createpost(inptitle)" #inptitle type="text" class="form-control">
+<ul class="list-group">
+    <li>
+        
+        {{postdata | json}}</li>
+</ul>
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let dat of getdata">
+        <button (click)="updatepost(dat)">update</button>
+        {{dat.userId}}
+        {{dat.id}}
+        {{dat.title}} ::::::
+        {{dat.body}}
+    <button (click)="deletepost(dat)">Delete</button></li>
+</ul>
+
+{{hey}}
