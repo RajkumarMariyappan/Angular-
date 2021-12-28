@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { PostchangeService } from '../postchange.service';
 @Component({
   selector: 'app-post',
@@ -15,14 +16,14 @@ export class PostComponent implements OnInit {
   ngOnInit() {
     this.service.getpostchanges().subscribe(ResponseData => {
       console.log(ResponseData)
-      this.getdata = ResponseData
-    })
+      this.getdata = ResponseData;
+    });
   }
 
   createpost(inptitle: HTMLInputElement) {
     let posttit = { title: inptitle.value }
     inptitle.value = '';
-    this.service.createpostchanges(posttit).subscribe((responseDa: any) => {
+    this.service.createpostchanges(posttit).subscribe((responseDa) => {
       console.log(responseDa);
       this.postdata = responseDa;
     }, error => {
@@ -35,7 +36,7 @@ export class PostComponent implements OnInit {
     });
   }
 
-  updatepost(dat: any) {
+  updatepost(dat:any) {
     this.service.updatepostchanges(dat).subscribe(responsed => {
       console.log(responsed);
     });
@@ -45,7 +46,7 @@ export class PostComponent implements OnInit {
     this.service.deletepostchanges(dat.id).subscribe(responss => {
       let index = this.getdata.indexOf(dat);
       this.getdata.splice(index, 1);
-    }, error => {
+    }, (error:Response) => {
       if (error.status === 404)
         alert('Post already deleted');
       else throw error;

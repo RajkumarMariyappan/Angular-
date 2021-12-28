@@ -17,6 +17,7 @@ import { PostchangeService } from './postchange.service';
 import { AppErrorHandler } from './app-error-handler';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,8 +29,6 @@ import { AppErrorHandler } from './app-error-handler';
     RegistrationComponent,
     ReactiveComponent,
     PostComponent,
-    
-    
   ],
   imports: [
     BrowserModule,
