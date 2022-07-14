@@ -2,8 +2,9 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 
-import { catchError,throwError } from 'rxjs';
+import { catchError,pipe,throwError } from 'rxjs';
 import {  Observable } from 'rxjs';
+
 @Injectable()
 export class PostchangeService {
   url='https://jsonplaceholder.typicode.com/posts';
@@ -11,7 +12,7 @@ export class PostchangeService {
  
   
   constructor(private http : HttpClient) { }
-  handleError(error: Response){
+  handleError(error: HttpErrorResponse){
     return throwError(()=>error);
    }
 getpostchanges(){

@@ -33,6 +33,7 @@
 <h3>ngSwitch</h3><br>
 <button (click)="view ='map'">map</button>
 <button (click)="view ='list'">list</button>
+<button (click)="view ='default'">default</button>
 <div [ngSwitch]="view">
     <div *ngSwitchCase="'list'"><h5>list</h5></div>
     <div *ngSwitchCase="'map'"><h5>map</h5></div>

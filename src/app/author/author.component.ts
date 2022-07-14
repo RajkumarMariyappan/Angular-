@@ -11,6 +11,7 @@ export class AuthorComponent implements OnInit {
   title="Welcome to first Angular App";
   authors;
   imagess ="favicon.ico";
+  hai=false;
   colspan= 2;
 isactive=true;
 isactiv=true;
@@ -22,6 +23,10 @@ isactiv=true;
   name:any="rajkumar";
   input(){
     console.log("enter is pressed...",this.name);
+  }
+  temp(email:any){
+    console.log(email.value);
+
   }
 divclick(){
   console.log("div button is clicked...");

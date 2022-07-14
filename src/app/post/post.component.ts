@@ -12,11 +12,14 @@ export class PostComponent implements OnInit {
   hey = '';
   constructor(private service: PostchangeService) {
   }
-
+err:any;
   ngOnInit() {
     this.service.getpostchanges().subscribe(ResponseData => {
       console.log(ResponseData)
       this.getdata = ResponseData;
+    },(error)=>{
+      this.err=error;
+      console.log(this.err.message);
     });
   }
 

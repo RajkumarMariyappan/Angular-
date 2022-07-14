@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DirectiveComponent implements OnInit {
 subject=[];
-list=[1,2,3,4];
+list=[10,20,30,40];
 view='map';
 
 listobj=[{

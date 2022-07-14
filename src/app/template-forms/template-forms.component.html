@@ -8,7 +8,7 @@
 <div class="form-group">
  <label for="exampleInputPassword1">Password</label>
     <input type="text" required  maxlength="10" class="form-control" id="exampleInputPassword1" ngModel name="password" (change)="log1(password)"  #password="ngModel" placeholder="Password">
-      <div *ngIf= "password.value.length<5 && password.touched">length of {{password.value.length}} is Weak password</div>
+      <div *ngIf= "password.value.length<5 && password.touched">length {{password.value.length}} is Weak password</div>
 </div>
   <div>
       <input type="checkbox" ngModel name="save"><label> Save the details</label>
@@ -31,3 +31,6 @@
   <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Submit</button>
 
 </form>
+
+
+
